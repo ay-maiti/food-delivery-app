@@ -1,0 +1,27 @@
+{
+  "name": "food-delivery-app",
+  "version": "1.0.0",
+  "description": "Clone of a food delivery app showcasing frontend development. Features include restaurant browsing, menu selection, cart management, and order tracking built using React",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ay-maiti/food-delivery-app.git"
+  },
+  "author": "Ayan Maiti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ay-maiti/food-delivery-app/issues"
+  },
+  "homepage": "https://github.com/ay-maiti/food-delivery-app#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
