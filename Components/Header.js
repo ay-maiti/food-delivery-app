@@ -1,4 +1,4 @@
-const logo_url = "https://d29fhpw069ctt2.cloudfront.net/icon/image/38511/preview.svg"
+import { logo_url } from "../utils/constants";
 
 const Header = () => {
     return <div className="header">
