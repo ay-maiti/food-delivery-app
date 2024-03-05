@@ -4,6 +4,7 @@ import Header from "./Components/Header"
 import Body from "./Components/Body"
 import Footer from "./Components/Footer"
 import Basket from "./Components/Basket"
+import RestaurantMenu from "./Components/RestaurantMenu"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 
 const AppLayout = () => {
@@ -24,6 +25,10 @@ const appRouter = createBrowserRouter([
         {
             element:<Basket/>,
             path:"/basket"
+        },
+        {
+            element:<RestaurantMenu/>,
+            path:"/restaurant/:resId"
         }]
     }
 ])
