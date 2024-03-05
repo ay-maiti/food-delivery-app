@@ -1,5 +1,4 @@
 import RestaurantCard from "./RestaurantCard";
-import res_data from "../utils/data"
 import {fetch_restaurant_list_url} from "../utils/constants"
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
