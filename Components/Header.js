@@ -8,12 +8,12 @@ const Header = () => {
             <img className="logo" alt="Munch logo" src={logo_url}/>
         </div>
         </Link>
-        <div className="header-links">
-            <Link to="/basket">Your Basket</Link>
-            <a href="#">Login</a>
-            <a href="#">Signup</a>
-            <a href="#">About</a>
-        </div>
+        <ul className="header-links">
+            <li><Link className="link" to="/basket">Your Basket</Link></li>
+            <li><Link className="link" to="/login">Login</Link></li>
+            <li><Link className="link" to="/signup">Signup</Link></li>
+            <li><Link className="link" to="/about">About</Link></li>
+        </ul>
     </div>
 }
 

@@ -1,26 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
-import {fetch_restaurant_list_url} from "../utils/constants"
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom"
+import useFetchResList from "../utils/useFetchResList";
 
 const Body = ()=>{
-    const [resList, setResList] = useState([])
     const [curResList, setCurResList] = useState([]);
 
     const [searchText, setSearchText] = useState([]);
 
-    useEffect(()=>{
-        fetchData();
-    }, [])
-
-    const fetchData = async ()=>{
-        const data_json = await fetch(fetch_restaurant_list_url)
-        const data = await data_json.json();
-        console.log(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setResList(data?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setCurResList(data?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    }
+    const resList = useFetchResList(setCurResList);
 
     return <div className="body">
         <div className="filter_container">
@@ -38,9 +27,9 @@ const Body = ()=>{
             }}>Show Top Restaurants</button>
         </div>
         {
-        curResList.length>0?
+        curResList?.length>0?
         <div className="res-card-container">
-            {curResList.map(restaurant=><Link to={"/restaurant/"+restaurant.info.id}><RestaurantCard key= {restaurant.info.id} resData={restaurant}/></Link>)}
+            {curResList.map(restaurant=><Link key= {restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>)}
         </div>
         :<Shimmer/>
         }

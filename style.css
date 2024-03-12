@@ -19,17 +19,21 @@ body{
     display:flex;
     justify-content: space-between;
     padding: 0px 50px 0px 50px;
-    background-color: aliceblue;
+    background-color: red;
 }
 
-.header-links>a{
+.link{
     margin: 0px 10px 0px 10px;
     text-decoration: none;
-    color: black;
+    color: yellow;
+    list-style: none;
+    font-size: large;
 }
 
 .header-links{
     padding-top: 30px;
+    display: flex;
+    list-style: none;
 }
 
 .res-card{
