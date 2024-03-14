@@ -3,6 +3,7 @@ import {useState } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom"
 import useFetchResList from "../utils/useFetchResList";
+import {addVegLabel} from "./RestaurantCard"
 
 const Body = ()=>{
     const [curResList, setCurResList] = useState([]);
@@ -10,6 +11,8 @@ const Body = ()=>{
     const [searchText, setSearchText] = useState([]);
 
     const resList = useFetchResList(setCurResList);
+
+    const RestaurantCardVeg = addVegLabel(RestaurantCard);
 
     return <div className="body">
         <div className="filter_container">
@@ -29,7 +32,7 @@ const Body = ()=>{
         {
         curResList?.length>0?
         <div className="res-card-container">
-            {curResList.map(restaurant=><Link key= {restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><RestaurantCard resData={restaurant}/></Link>)}
+            {curResList.map(restaurant=><Link key= {restaurant.info.id} to={"/restaurant/"+restaurant.info.id}>{restaurant.info.veg?<RestaurantCardVeg resData={restaurant}/> :<RestaurantCard resData={restaurant}/>}</Link>)}
         </div>
         :<Shimmer/>
         }

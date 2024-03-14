@@ -19,4 +19,13 @@ const RestaurantCard = (props)=>{
     </div>
 }
 
+export const addVegLabel = (RestaurantCard)=>{
+    return (props)=>{
+        return <div>
+                <label className="veg-label">VEG</label>
+                <RestaurantCard {...props}/>
+               </div>
+    }
+}
+
 export default RestaurantCard; 

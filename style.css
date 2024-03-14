@@ -87,3 +87,11 @@ body{
 .shimmer{
     background-color:lightgray;
 }
+
+.veg-label{
+    position: absolute;
+    padding:5px 10px;
+    background-color: green;
+    color:white;
+    border-radius: 5px;
+}
