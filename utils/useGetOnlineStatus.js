@@ -12,8 +12,6 @@ const useGetOnlineStatus = ()=>{
         window.addEventListener("offline", (event)=>{
             console.log("you are now offline")
             setStatus(false)});
-
-        console.log("in use effect")
     }, [])
 
     console.log("mounted")

@@ -95,3 +95,41 @@ body{
     color:white;
     border-radius: 5px;
 }
+
+.menu{
+    width: 50%;
+    margin: 0px auto;
+}
+.menu-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted black;
+    padding: 15px 0px;
+}
+
+.menu-header-title{
+    font-size: larger;
+}
+
+.menu-header-content{
+    font-size: small;
+}
+
+.menu-header-title,.menu-header-content{
+    margin:5px 0px;
+}
+
+.menu-header-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.menu-category-title{
+    display: flex;
+    justify-content: space-between;
+}
