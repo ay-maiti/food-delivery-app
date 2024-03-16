@@ -1,4 +1,5 @@
 import { Component } from "react";
+import rabbit from "../utils/rabbit"
 
 class Name extends Component{
     constructor(props){
@@ -15,6 +16,9 @@ class Name extends Component{
         console.log("name render")
         const name = this.props.name
         return <div>
+            <rabbit.Consumer>
+                {(data)=>{return <h1>{data.userName}</h1>}}
+            </rabbit.Consumer>
             <h1>{name}</h1>
         </div>
     }

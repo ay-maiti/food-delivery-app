@@ -2,3 +2,4 @@ export const res_img_url = "https://media-assets.swiggy.com/swiggy/image/upload/
 export const logo_url = "https://d29fhpw069ctt2.cloudfront.net/icon/image/38511/preview.svg"
 export const fetch_restaurant_list_url = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9590509&lng=77.7494998&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 export const restaurant_menu_url = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9590509&lng=77.7494998&restaurantId="
+export const github_user_url = "https://api.github.com/users/ay-maiti"

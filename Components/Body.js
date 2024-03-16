@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom"
 import useFetchResList from "../utils/useFetchResList";
 import {addVegLabel} from "./RestaurantCard"
+import credentials from "../utils/credentials";
+import { useContext } from "react";
 
 const Body = ()=>{
     const [curResList, setCurResList] = useState([]);
@@ -14,6 +16,8 @@ const Body = ()=>{
 
     const RestaurantCardVeg = addVegLabel(RestaurantCard);
 
+    let cred = useContext(credentials);
+
     return <div className="body">
         <div className="filter_container">
             <div className="search">
@@ -23,6 +27,12 @@ const Body = ()=>{
                     setCurResList(filtered_res_list)
                 }}>Search</button>
             </div>
+            
+            <div>
+                <label>Username</label>
+                <input value={cred.username} onChange={(e)=>{cred.setUsername(e.target.value)}}/>
+            </div>
+
             <button className="filter_top_restaurants" onClick={()=>{
                 const filtered_res = resList.filter(res=>res.info.avgRating>=4.5)
                 console.log(filtered_res)

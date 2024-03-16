@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react"
+import React, {lazy, Suspense, useEffect} from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./Components/Header"
 import Body from "./Components/Body"
@@ -9,13 +9,21 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 import ErrorPage from "./Components/ErrorPage"
 import About from "./Components/About"
 import Shimmer from "./Components/Shimmer"
+import useFetchUser from "./utils/useFetchUser"
+import credentials from "./utils/credentials"
+
 
 const AppLayout = () => {
-    return <div className="app">
+    const [username, setUsername] = useFetchUser()
+    console.log("app.js", username)
+    if(username===undefined) return
+    return (<credentials.Provider value={{username, setUsername}}>
+            <div className="app">
                 <Header/>
                 <Outlet/>
                 <Footer/>
             </div>
+            </credentials.Provider>)
 }
 
 const Grocery = lazy(()=>{ return import("./Components/Grocery")});
